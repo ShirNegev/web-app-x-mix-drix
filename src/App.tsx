@@ -52,13 +52,13 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>TicTacToe</h1>
-      <div>
+    <div className="game-container">
+      <h1>X Mix Drix</h1>
+      <div className="board">
         {board.map((cell, index) => (
           <div
             key={index}
-            style={{border: "1px solid black}"}}
+            className="cell"
             onClick={() => handleClick(index)}
           >
             {cell === "X" && <img src={xImage} alt="X" />}
@@ -67,7 +67,7 @@ const App = () => {
         ))}
       </div>
       {winner && (
-        <div>
+        <div className="winner-message">
           {winner === "Tie" ? "It's a Tie!" : `${winner} Wins!`}
           <div>
             <button onClick={resetGame}>Play Again</button>
